@@ -1,0 +1,3 @@
+Amazon Neptune is a fully managed graph database service by AWS.
+Amazon Bedrock provides foundation models for generative AI.
+Neptune integrates with Bedrock for knowledge graph powered applications.
