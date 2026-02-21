@@ -224,7 +224,36 @@ Unlike standard RAG implementations, this system:
 - Integrates cloud-native LLM infrastructure
 
 ---
+## 📊  Performance Benchmarks (Local Development)
 
+Environment:
+
+MacBook Pro (M3 Pro)
+FAISS (CPU)
+Amazon Bedrock Claude 3 Sonnet
+Region: us-east-1
+
+Retrieval (Hybrid Graph + Semantic)
+Mean Latency: 21.52 ms
+P95 Latency: 25.55 ms
+Retrieval-only throughput: ~45 QPS (CPU-bound)
+
+Claude Generation
+Mean Latency: 526.06 ms
+P95 Latency: 596.39 ms
+
+End-to-End (Retrieval + Claude)
+Mean Latency: 547.60 ms
+P95 Latency: 614.39 ms
+End-to-end throughput: ~1.5–2 QPS (LLM-bound)
+
+Observations
+Retrieval accounts for <5% of total latency.
+LLM inference dominates system response time.
+Hybrid retrieval provides explainability with negligible latency overhead.
+System scalability primarily depends on LLM concurrency and token optimization.
+
+---
 ## 🚀 Future Enhancements
 
 - FastAPI production API
